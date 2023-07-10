@@ -24,6 +24,7 @@ const MapIndia = () => {
     "#CBFFA9",
   ];
 
+  // Getting clicked location and changing colour
   function onLocationClick(event) {
     let stateArray = [...defaultSelectedState];
     if (stateArray?.includes(event.target.getAttribute("name"))) {
@@ -44,11 +45,13 @@ const MapIndia = () => {
     }
   }
 
+  // Removing all states from select
   const clearAllFunction = () => {
     setDefaultSelectedState([]);
     localStorage.clear();
   };
 
+  // Showing tooltip on hover
   const handleStateHover = (event) => {
     setHoveredState(event.target.attributes.name.value);
     const tooltipStyle = {
@@ -59,11 +62,13 @@ const MapIndia = () => {
     setTooltipPosition({ ...tooltipStyle });
   };
 
+  // Removing tooltip on mouseout
   const handleLocationMouseOut = () => {
     setHoveredState(null);
     setTooltipPosition({ display: "none" });
   };
 
+  // Setting up by default selected array
   useEffect(() => {
     const mapData = JSON.parse(localStorage.getItem("mapData")) || ["Gujarat"];
     setDefaultSelectedState([...mapData]);
@@ -107,6 +112,9 @@ const MapIndia = () => {
   );
 };
 
+export default MapIndia;
+
+// Styling up main SVG component
 const StyledSVGMap = styled(SVGMap)`
   ${({ $defaultSelectedState, $selectedStateColor }) =>
     $defaultSelectedState?.map(
@@ -129,6 +137,7 @@ const StyledSVGMap = styled(SVGMap)`
   stroke-linejoin: round;
 `;
 
+// Styling up Button
 const StyledButton = styled.button`
   background-color: #e4f0ec;
   padding: 0px 34px;
@@ -137,4 +146,3 @@ const StyledButton = styled.button`
   height: 40px;
   cursor: pointer;
 `;
-export default MapIndia;

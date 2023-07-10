@@ -4,13 +4,10 @@ const MapState = ({ data, name }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      // viewBox="0 0 3000 3000"
       viewBox="0 0 612 696"
       className="sc-hKwBBi ezlnGP"
       role="none"
       aria-label={`Map of ${name}`}
-      // width="50%"
-      // height="50%"
     >
       <path
         id="wb"
