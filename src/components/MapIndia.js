@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import India from "@svg-maps/india";
 import { SVGMap } from "react-svg-map";
 import "react-svg-map/lib/index.css";
@@ -22,6 +22,21 @@ const MapIndia = () => {
     "#FFD6A5",
     "#FFFEC4",
     "#CBFFA9",
+    "#FAF0D7",
+    "#FFD9C0",
+    "#8CC0DE",
+    "#CCEEBC",
+    "#F5F5F5",
+    "#F2EAD3",
+    "#DFD7BF",
+    "#78C1F3",
+    "#9BE8D8",
+    "#E2F6CA",
+    "#F8FDCF",
+    "#AAC8A7",
+    "#C3EDC0",
+    "#E9FFC2",
+    "#FDFFAE",
   ];
 
   // Getting clicked location and changing colour
@@ -120,7 +135,7 @@ const StyledSVGMap = styled(SVGMap)`
     $defaultSelectedState?.map(
       (state, index) => `
   & [aria-label="${state}"] {
-    fill: ${$selectedStateColor[index < 9 ? index : 0]};
+    fill: ${$selectedStateColor[index < 24 ? index : 0]};
   }
 
   &[aria-label="${state}"]:hover {
